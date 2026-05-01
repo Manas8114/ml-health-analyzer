@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🧬 ML Health Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready **Hybrid Diagnostic Engine** for machine learning models. This tool provides deep insights into model performance, overfitting detection, and deployment readiness using a "Deterministic-First" approach combined with optional AI-augmented reasoning.
 
-Currently, two official plugins are available:
+![ML Health Analyzer Dashboard](src/assets/hero.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
 
-## React Compiler
+- **Hybrid Intelligence Engine**: Operates fully offline using robust heuristic-based logic, with an optional AI layer (Anthropic Claude) for deep semantic analysis.
+- **Deterministic-First Diagnostics**: Critical health metrics (Overfitting, Underfitting, Convergence) are calculated using mathematically sound formulas, ensuring 100% reliability without API dependency.
+- **Safety Deployment Guard**: Automated safety checks that mark models as `non-deployable` if critical issues (e.g., severe overfitting or loss divergence) are detected.
+- **Interactive Chat Interface**: Deep-dive into specific model problems using a streaming AI chat interface that leverages deterministic signals for context.
+- **Professional Visualization**: Real-time performance charts and severity gauges for immediate visual feedback.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React 18, Vite, TypeScript
+- **Styling**: Tailwind CSS (Modern Glassmorphism Design)
+- **Testing**: Vitest, React Testing Library (100% Core Coverage)
+- **AI Integration**: Anthropic SDK (Claude 3.5 Sonnet)
+- **State Management**: React Hooks & Context
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Manas8114/ml-health-analyzer.git
+   cd ml-health-analyzer
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧪 Testing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The project maintains a strict testing protocol. All core logic and UI components are validated.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Run all tests**: `npm run test`
+- **Watch mode**: `npm run test:watch`
+- **Coverage report**: `npm run test:ui` (for visual coverage)
+
+## 📐 Architecture: Deterministic-First
+
+The core logic resides in `src/lib/deterministic-engine.ts`. It follows a strict pipeline:
+1. **Signal Extraction**: Raw model stats are processed into normalized signals.
+2. **Heuristic Diagnosis**: Overfitting, Underfitting, and Variance are detected via encoded rules.
+3. **Safety Verification**: Models are scanned for critical blockers.
+4. **AI Enrichment (Optional)**: If an API key is provided, deterministic signals are sent to the LLM to generate high-fidelity human-readable reports.
+
+## 📄 License
+
+MIT © [Manas8114](https://github.com/Manas8114)
